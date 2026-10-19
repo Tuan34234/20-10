@@ -1,0 +1,66 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+.handwriting {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* 1. Hiệu ứng biến mất & thu nhỏ cho màn hình bắt đầu */
+.animate-shrink-out {
+    animation: shrinkOut 0.5s ease-in forwards;
+}
+
+@keyframes shrinkOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+
+/* 2. Hiệu ứng khối nội dung mở rộng sinh động dạng gợn sóng (Elastic / Ripple expansion) */
+.animate-ripple-expand {
+    animation: rippleExpand 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes rippleExpand {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+        border-radius: 50%; /* Bắt đầu dạng vòng tròn nhỏ như giọt nước/gợn sóng */
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05); /* Phồng to hơn kích thước thật một chút */
+    }
+    75% {
+        transform: scale(0.97); /* Co nhẹ lại tạo hiệu ứng gợn sóng đàn hồi */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        border-radius: 1.5rem; /* Trở lại bo góc chuẩn rounded-3xl */
+    }
+}
+
+/* Tùy chỉnh thêm hiệu ứng gợn sóng lăn tăn nhẹ ở viền khi mở */
+.ripple-border {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.6), 0 0 0 15px rgba(244, 114, 182, 0);
+    animation: rippleWave 1s ease-out;
+}
+
+@keyframes rippleWave {
+    0% {
+        box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 0 30px rgba(244, 114, 182, 0);
+    }
+}

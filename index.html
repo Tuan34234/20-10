@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gửi Các Bóng Hồng Của Lớp Chúng Ta ✨</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Library Pháo hoa -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 min-h-screen flex items-center justify-center p-4">
+    <!-- Container chính -->
+    <div class="max-w-3xl w-full bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-6 md:p-10 border border-pink-300 text-center relative overflow-hidden">
+        
+        <!-- Màn 1: Nút mở phong bì -->
+        <div id="start-screen" class="space-y-6 py-10">
+            <div class="text-7xl animate-bounce">💌</div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-pink-600">
+                Secret file: 20/10 ✨
+            </h1>
+            <button id="btn-open" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition active:scale-95 text-lg cursor-pointer">
+                🔓 CLICK ME!
+            </button>
+        </div>
+
+        <!-- Màn 2: Bức thư & Nội dung chính (Ẩn ban đầu) -->
+        <div id="content-screen" class="hidden space-y-8 animate-fade-in">
+        
+        <!-- Bức thư -->
+        <div class="bg-pink-50 p-6 rounded-2xl border border-pink-200 text-left shadow-inner">
+            <h2 class="text-2xl font-bold text-pink-600 mb-4 text-center handwriting">
+            Gửi đến bé gái mở được bức thư này💕
+            </h2>
+            <p id="letter-text" class="text-gray-700 text-base md:text-lg leading-relaxed whitespace-pre-line font-medium"></p>
+            <p id="gift" class="text-gray-700 text-base md:text-lg leading-relaxed whitespace-pre-line font-medium"></p>
+            <p id="TacGia" class="text-gray-500 text-sm md:text-base leading-relaxed whitespace-pre-line font-medium italic text-right mt-2"></p>
+        </div>
+
+        <!-- Danh sách các bạn nữ trong lớp -->
+        <!-- <div>
+            <h3 class="text-xl font-bold text-purple-700 mb-4">✨ Bảng Tôn Vinh Các Bóng Hồng ✨</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="girls-list">
+            
+            </div>
+        </div> -->
+
+        <!-- Nút bắn pháo -->
+        <div class="pt-4">
+            <button onclick="celebrate()" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-xl transform transition hover:scale-105 text-lg">
+            🎉
+            </button>
+        </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
